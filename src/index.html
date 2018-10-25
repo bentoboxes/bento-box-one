@@ -5,11 +5,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
   <title>Stencil Component Starter</title>
   <script src="/build/mycomponent.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
 </head>
 <body>
 
-  <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
+  <div class="container">
 
+    <!--<my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>-->
+    <bento-river-of-news title="News"></bento-river-of-news>
+
+  </div>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script type="text/javascript">
+    (function(axios) {
+      var dataURL = '/data/items.json';
+
+      axios.get(dataURL).then(function(response) {
+        var items = response.data;
+
+        var riverOfNewsElement = document.querySelector('bento-river-of-news');
+        riverOfNewsElement.items = items;
+      });
+
+    })(axios);
+  </script>
 </body>
 </html>
