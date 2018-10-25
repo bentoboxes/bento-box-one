@@ -1,0 +1,88 @@
+.nc--river-of-news {
+
+  &__item {
+    clear: both;
+    margin: 20px 0;
+    overflow: hidden;
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 20px;
+  }
+
+  &__item-title {
+    padding: 20px 0 10px 0;
+  }
+
+  &__item-summary {
+    /*padding: 0 0 20px 0;*/
+  }
+
+  &__item-section--one {
+    float: left;
+  }
+
+  &__item-section--two {
+    float: left;
+  }
+
+  &__item-thumbnail {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
+}
+
+// Extra small devices (portrait phones, less than 576px)
+// No media query for `xs` since this is the default in Bootstrap
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .nc--river-of-news {
+    &__item-section--one {
+      width: 100%;
+    }
+
+    &__item-section--two {
+      width: 100%;
+    }
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .nc--river-of-news {
+    &__item-section--one {
+      width: 40%;
+    }
+
+    &__item-section--two {
+      width: 60%;
+    }
+
+    &__item-title {
+      padding: 0 20px;
+    }
+
+    &__item-summary {
+      padding: 0 20px;
+    }
+
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .nc--river-of-news {
+    &__item-section--one {
+      width: 30%;
+    }
+
+    &__item-section--two {
+      width: 70%;
+    }
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+}

@@ -12,6 +12,15 @@ import '@stencil/core';
 
 export namespace Components {
 
+  interface BentoRiverOfNews {
+    'items': Array<any>;
+    'title': string;
+  }
+  interface BentoRiverOfNewsAttributes extends StencilHTMLAttributes {
+    'items'?: Array<any>;
+    'title'?: string;
+  }
+
   interface MyComponent {
     'first': string;
     'last': string;
@@ -26,13 +35,21 @@ export namespace Components {
 
 declare global {
   interface StencilElementInterfaces {
+    'BentoRiverOfNews': Components.BentoRiverOfNews;
     'MyComponent': Components.MyComponent;
   }
 
   interface StencilIntrinsicElements {
+    'bento-river-of-news': Components.BentoRiverOfNewsAttributes;
     'my-component': Components.MyComponentAttributes;
   }
 
+
+  interface HTMLBentoRiverOfNewsElement extends Components.BentoRiverOfNews, HTMLStencilElement {}
+  var HTMLBentoRiverOfNewsElement: {
+    prototype: HTMLBentoRiverOfNewsElement;
+    new (): HTMLBentoRiverOfNewsElement;
+  };
 
   interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {}
   var HTMLMyComponentElement: {
@@ -41,10 +58,12 @@ declare global {
   };
 
   interface HTMLElementTagNameMap {
+    'bento-river-of-news': HTMLBentoRiverOfNewsElement
     'my-component': HTMLMyComponentElement
   }
 
   interface ElementTagNameMap {
+    'bento-river-of-news': HTMLBentoRiverOfNewsElement;
     'my-component': HTMLMyComponentElement;
   }
 
